@@ -1,48 +1,37 @@
-/* Estilo geral da página */
 body {
-    background-color: #1c1c3c;
-    color: #ffffff;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #1e1e2f;
+    color: #fff;
+    font-family: monospace;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-    margin: 0;
 }
 
-.container {
-    text-align: center;
-    padding: 20px;
+h1 {
+    color: #f8a5c2;
+    margin-bottom: 20px;
 }
 
-/* Efeito Typewriter */
 .typewriter-text {
-    overflow: hidden; /* Esconde o texto que ainda está "digitando" */
-    border-right: 0.15em solid orange; /* Cria o efeito do cursor laranja piscando */
-    white-space: nowrap; /* Impede quebra de linha */
-    margin: 0 auto;
-    font-size: 1.8em;
-    max-width: 90%; /* Responsivo */
-    animation: 
-        typing 3.5s steps(30, end) alternate infinite, /* Efeito de digitação */
-        blink-caret 0.5s step-end infinite; /* Efeito do cursor piscando */
+    overflow: hidden; /* Esconde o texto que ainda não foi "digitado" */
+    border-right: 0.15em solid orange; /* Faz a barrinha do cursor */
+    white-space: nowrap; /* Mantém o texto em uma única linha */
+    margin: 0 auto; /* Centraliza o texto */
+    letter-spacing: 0.05em;
+    animation: typing 3.5s steps(30, end) alternate infinite,
+               blink-caret 0.5s step-end infinite;
 }
 
 /* Animação de digitação */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 /* Animação do cursor piscando */
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange }
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 600px) {
-    .typewriter-text {
-        font-size: 1.2em;
-    }
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
 }

@@ -14,29 +14,40 @@ body {
 h1 {
     color: #f8a5c2;
     margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 .typewriter-text {
-    overflow: hidden;                  /* Esconde o texto que ainda não foi digitado */
-    border-right: 0.15em solid orange; /* Barrinha do cursor */
-    white-space: normal;               /* Permite quebra de linha automática no mobile */
-    word-break: break-word;            /* Garante quebra de palavra se precisar */
+    overflow: hidden;
+    border-right: 0.15em solid orange;
+    white-space: nowrap;
     margin: 0 auto;
     letter-spacing: 0.05em;
-    max-width: 90%;                    /* Limita largura no mobile */
-    animation: typing 5s steps(55, end) infinite, 
+    font-size: 1.2rem;
+    animation: typing 5s steps(55, end) forwards,
                blink-caret 0.5s step-end infinite;
+    animation-delay: 0s, 5s; /* Inicia a digitação logo, o cursor só pisca após */
 }
 
-/* Animação de digitação + pausa no final */
+/* Animação de digitação */
 @keyframes typing {
-    0% { width: 0; }
-    90% { width: 100%; }
-    100% { width: 100%; } /* Mantém o texto visível durante a pausa final */
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 /* Animação do cursor piscando */
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: orange; }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .typewriter-text {
+        font-size: 1rem;
+    }
 }

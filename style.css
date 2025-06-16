@@ -7,8 +7,8 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    text-align: center;
     padding: 10px;
+    text-align: center;
 }
 
 h1 {
@@ -17,31 +17,37 @@ h1 {
     font-size: 1.5rem;
 }
 
+/* Container da digitação */
 .typewriter-text {
     overflow: hidden;
     border-right: 0.15em solid orange;
-    white-space: nowrap;
     margin: 0 auto;
     letter-spacing: 0.05em;
     font-size: 1.2rem;
-    animation: typing 5s steps(55, end) forwards,
+    width: 90%; /* Limita a largura para mobile */
+    max-width: 600px; /* Limite máximo em telas maiores */
+    white-space: normal; /* Permite quebra de linha automática */
+    animation: typing 5s steps(55, end) alternate,
                blink-caret 0.5s step-end infinite;
-    animation-delay: 0s, 5s; /* Inicia a digitação logo, o cursor só pisca após */
+    animation-iteration-count: infinite;
+    animation-delay: 0s, 5s;
 }
 
-/* Animação de digitação */
+/* Digita e depois apaga */
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    0% { width: 0; }
+    40% { width: 100%; }
+    60% { width: 100%; }
+    100% { width: 0; }
 }
 
-/* Animação do cursor piscando */
+/* Cursor piscando */
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: orange; }
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 600px) {
     h1 {
         font-size: 1.2rem;

@@ -1,0 +1,38 @@
+body {
+    background-color: #1e1e2f;
+    color: #fff;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    color: #f8a5c2;
+    margin-bottom: 20px;
+}
+
+.typewriter-text {
+    overflow: hidden; /* Esconde o texto durante a digitação */
+    border-right: 0.15em solid orange; /* Cursor laranja piscando */
+    white-space: nowrap; /* Impede quebra de linha */
+    margin: 0 auto;
+    letter-spacing: 0.05em;
+    animation: typing 4s steps(50, end) alternate infinite,
+               blink-caret 0.5s step-end infinite;
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}

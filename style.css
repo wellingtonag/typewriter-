@@ -8,6 +8,7 @@ body {
     justify-content: center;
     height: 100vh;
     text-align: center;
+    padding: 10px;
 }
 
 h1 {
@@ -16,19 +17,22 @@ h1 {
 }
 
 .typewriter-text {
-    overflow: hidden; /* Esconde o texto durante a digitação */
-    border-right: 0.15em solid orange; /* Cursor laranja piscando */
-    white-space: nowrap; /* Impede quebra de linha */
+    overflow: hidden;                  /* Esconde o texto que ainda não foi digitado */
+    border-right: 0.15em solid orange; /* Barrinha do cursor */
+    white-space: normal;               /* Permite quebra de linha automática no mobile */
+    word-break: break-word;            /* Garante quebra de palavra se precisar */
     margin: 0 auto;
     letter-spacing: 0.05em;
-    animation: typing 4s steps(50, end) alternate infinite,
+    max-width: 90%;                    /* Limita largura no mobile */
+    animation: typing 5s steps(55, end) infinite, 
                blink-caret 0.5s step-end infinite;
 }
 
-/* Animação de digitação */
+/* Animação de digitação + pausa no final */
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    0% { width: 0; }
+    90% { width: 100%; }
+    100% { width: 100%; } /* Mantém o texto visível durante a pausa final */
 }
 
 /* Animação do cursor piscando */
